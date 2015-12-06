@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GUI : wow-av-data</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+<script type='text/javascript' src='http://www.google.com/jsapi'></script>
+<script type='text/javascript' src='src/drawCharts.js'></script>
+<script type='text/javascript'>
+	google.load('visualization', '1', {'packages':['annotatedtimeline']});
+	// google.setOnLoadCallback(drawChart);
+</script>
+
+</head>
+
+<body>
+	<form id="form">
+		Item ID : <input id="item_id" type="text" name="Item id"><br>
+
+		Data type : <br>
+		<input type="checkbox" name="datas" value="buy"> Buy<br>
+		<input type="checkbox" name="datas" value="notbuy"> Not Buy<br>
+		<input type="checkbox" name="datas" value="sale"> Sale<br>
+		<input type="checkbox" name="datas" value="uptosale"> Up to Sale<br>
+
+		Additional data : <br>
+		<input type="checkbox" name="adds" value="std"> Standard deviation<br>
+		<input type="checkbox" name="adds" value="max"> Maximum<br>
+		<input type="checkbox" name="adds" value="min"> Minimum<br>
+		<input type="checkbox" name="adds" value="min"> Bid<br>
+	</form>
+	<input type="button" value="Generate" onclick="drawCharts()" />
+
+	<h3>Google AnnotatedTimeline:</h3>
+	<div id='gviz_div' style='width: 1225px; height: 420px;'></div><br>
+	<div id='gviz_div_q' style='width: 1225px; height: 420px;'></div>
+
+	<h3>Dygraph.GVizChart:</h3>
+	<div id='dg_div' style='width: 1225px; height: 420px;'></div><br>
+	<div id='dg_div_q' style='width: 1225px; height: 420px;'></div>
+</body>
+
+</html>
