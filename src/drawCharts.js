@@ -90,7 +90,7 @@ function addData(i,datas,isStd,isMax,isMin,isBid,line){
 
 	if(datas[i].length==0){
 		sDate = data[0]
-		datas[i].push(new Date(parseInt(sDate.substring(0,4)),parseInt(sDate.substring(4,6)),parseInt(sDate.substring(6,8)),parseInt(sDate.substring(8,10)),parseInt(sDate.substring(10,12)),parseInt(sDate.substring(12,14))))
+		datas[i].push(new Date(parseInt(sDate.substring(0,4)),parseInt(sDate.substring(4,6))-1,parseInt(sDate.substring(6,8)),parseInt(sDate.substring(8,10)),parseInt(sDate.substring(10,12)),parseInt(sDate.substring(12,14))))
 	}
 	//Date,inter,Q,max,min,avg,std,max,min,avg,std
 	// 0  , 1   ,2, 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10
