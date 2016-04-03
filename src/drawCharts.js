@@ -289,10 +289,13 @@ function dygraph_csv_Q(datas,nType){
 
 function drawChart(){
 	var i = 0
-
+	var folder = "structure-1"
 	var form = document.getElementById("form")
 
 	var item_id = form.elements["item_id"].value;
+
+	var isApr = form.date[0].checked;
+	var isNov = form.date[1].checked;
 
 	var isBuy = form.datas[0].checked;
 	var isNotbuy = form.datas[1].checked;
@@ -308,20 +311,25 @@ function drawChart(){
 
 	var allTexts = new Array();
 
+	if(isNov){
+		folder = "structure-2"
+	}
+
+
 	if(isBuy){
-		read("../wow-AH-python/results/structure/buy/"+item_id+".txt");
+		read("../wow-AH-python/results/"+folder+"/buy/"+item_id+".txt");
 		allTexts[0] = fullText.split("\n");
 	}
 	if(isNotbuy){
-		read("../wow-AH-python/results/structure/notbuy/"+item_id+".txt");
+		read("../wow-AH-python/results/"+folder+"/notbuy/"+item_id+".txt");
 		allTexts[1] = fullText.split("\n");
 	}
 	if(isSale){
-		read("../wow-AH-python/results/structure/sale/"+item_id+".txt");
+		read("../wow-AH-python/results/"+folder+"/sale/"+item_id+".txt");
 		allTexts[2] = fullText.split("\n");
 	}
 	if(isUptosale){
-		read("../wow-AH-python/results/structure/uptosale/"+item_id+".txt");
+		read("../wow-AH-python/results/"+folder+"/uptosale/"+item_id+".txt");
 		allTexts[3] = fullText.split("\n");
 	}
 
